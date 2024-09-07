@@ -86,16 +86,16 @@ void main() {
   });
 }
 
-const String _validShortSubRip = '''
-1
-00:00:06,000 --> 00:00:12,074
-This is a test file
+// const String _validShortSubRip = '''
+// 1
+// 00:00:06,000 --> 00:00:12,074
+// This is a test file
 
-2
-00:01:54,724 --> 00:01:56,760
-- Hello.
-- Yes?
-''';
+// 2
+// 00:01:54,724 --> 00:01:56,760
+// - Hello.
+// - Yes?
+// ''';
 
 const String _validSubRip = '''
 1

@@ -42,9 +42,9 @@ class _VideoAppState extends State<VideoApp> {
 
     _subtitleController =
         SubtitleController.string(body, format: SubtitleFormat.webvtt);
-    final controller = VideoPlayerController.network(
+    final controller = VideoPlayerController.networkUrl(Uri.parse(
       'https://ohplayer.netlify.app/%E5%90%9B%E3%81%AE%E5%90%8D%E3%81%AF.mp4',
-    );
+    ));
 
     await controller.initialize();
 
