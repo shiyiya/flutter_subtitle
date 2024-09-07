@@ -85,6 +85,12 @@ List<Subtitle> parseFromSubRipString(String data) {
   final subtitleStrings = readSubtitleFile(data);
 
   for (final List<String> subtitleLine in subtitleStrings) {
+    // invalid blanks
+    // https://github.com/shiyiya/flutter_subtitle/issues/3
+    if (subtitleLine.isEmpty) {
+      continue;
+    }
+
     final range = rangefromSubRipString(subtitleLine[1]);
 
     if (range == null) {

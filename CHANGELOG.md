@@ -1,3 +1,7 @@
+## 0.0.5
+
+- Skip invalid blank line.
+
 ## 0.0.4
 
 - Improve newline character handling in WebVTT parsing.

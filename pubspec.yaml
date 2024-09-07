@@ -1,6 +1,6 @@
 name: flutter_subtitle
 description: show subtitle anywhere (chewie, videoplayer, etc.), suporrt webvtt and srt.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/shiyiya/flutter_subtitle
 
 environment:
@@ -14,6 +14,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.1
+  flutter_lints: ^4.0.0
 
 flutter:

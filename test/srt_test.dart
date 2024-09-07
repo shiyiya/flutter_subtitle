@@ -1,4 +1,4 @@
-// ignore_for_file: unused_element
+// ignore_for_file: constant_identifier_names
 
 import 'package:flutter_subtitle/flutter_subtitle.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -70,12 +70,19 @@ void main() {
 
     expect(parsedFile.subtitles.length, 1);
 
-    // final Subtitle firstSubtitle = parsedFile.subtitles.single;
-    // expect(firstSubtitle.number, 2);
-    // expect(firstSubtitle.start, const Duration(seconds: 15).inMilliseconds);
-    // expect(firstSubtitle.end,
-    //     const Duration(seconds: 17, milliseconds: 74).inMilliseconds);
-    // expect(firstSubtitle.text, 'This one is valid');
+    final Subtitle firstSubtitle = parsedFile.subtitles.single;
+    expect(firstSubtitle.number, 2);
+    expect(firstSubtitle.start, const Duration(seconds: 15).inMilliseconds);
+    expect(firstSubtitle.end,
+        const Duration(seconds: 17, milliseconds: 74).inMilliseconds);
+    expect(firstSubtitle.text, 'This one is valid');
+  });
+
+  test('Parses SubRip file with invalid blanks', () {
+    final parsedFile =
+        SubtitleController.string(_invalid_blanks, format: SubtitleFormat.srt);
+
+    expect(parsedFile.subtitles.length, 2);
   });
 }
 
@@ -126,4 +133,20 @@ This one is valid
 00:01:54,724 --> 00:01:6,760
 This one should be ignored because the
 ned time is missing a digit.
+''';
+
+const String _invalid_blanks = '''
+1
+00:00:06,000 --> 00:00:12,074
+This is a test file
+
+
+
+2
+00:01:54,724 --> 00:01:56,760
+- Hello.
+- Yes?
+
+
+
 ''';
