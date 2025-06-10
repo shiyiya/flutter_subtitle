@@ -84,6 +84,13 @@ void main() {
 
     expect(parsedFile.subtitles.length, 2);
   });
+
+  test('Parses SubRip file with invalid line', () {
+    final parsedFile =
+        SubtitleController.string(_invalid_lines, format: SubtitleFormat.srt);
+
+    expect(parsedFile.subtitles.length, 2);
+  });
 }
 
 // const String _validShortSubRip = '''
@@ -141,6 +148,22 @@ const String _invalid_blanks = '''
 This is a test file
 
 
+
+2
+00:01:54,724 --> 00:01:56,760
+- Hello.
+- Yes?
+
+
+
+''';
+
+const String _invalid_lines = '''
+1
+00:00:06,000 --> 00:00:12,074
+This is a test file
+
+This is a isolated line
 
 2
 00:01:54,724 --> 00:01:56,760

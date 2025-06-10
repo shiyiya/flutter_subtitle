@@ -87,7 +87,8 @@ List<Subtitle> parseFromSubRipString(String data) {
   for (final List<String> subtitleLine in subtitleStrings) {
     // invalid blanks
     // https://github.com/shiyiya/flutter_subtitle/issues/3
-    if (subtitleLine.isEmpty) {
+    // https://github.com/shiyiya/flutter_subtitle/issues/5
+    if (subtitleLine.length <= 2) {
       continue;
     }
 
